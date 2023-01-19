@@ -77,7 +77,7 @@ target_include_directories(PandarGeneralSDK PRIVATE
     ${catkin_INCLUDE_DIRS}
 )
 
-target_link_libraries(PandarGeneralSDK 
+target_link_libraries(PandarGeneralSDK
     PandarGeneral
     ${Boost_LIBRARIES}
     ${PCL_IO_LIBRARIES}
@@ -100,7 +100,7 @@ target_include_directories(hesai_lidar_node PRIVATE
     ${Boost_INCLUDE_DIRS}
 )
 
-target_link_libraries(hesai_lidar_node 
+target_link_libraries(hesai_lidar_node
     ${catkin_LIBRARIES}
     ${PCL_IO_LIBRARIES}
     PandarGeneralSDK
@@ -137,4 +137,9 @@ install(DIRECTORY launch/
 
 install(DIRECTORY config/
     DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/config
+)
+
+install(
+  FILES nodelets.xml
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
